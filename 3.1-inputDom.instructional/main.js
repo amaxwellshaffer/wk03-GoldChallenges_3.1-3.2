@@ -10,3 +10,15 @@
 */
 
 //NOTE: Write your code below and push back to your github branch.  SUBMIT YOUR GITHUB URL IN CANVAS
+
+//html references:
+const displayResponse = document.querySelector('p');
+
+function setVar() {
+    let storeName = document.getElementById('store').value;
+    let productName = document.getElementById('product').value;
+    let quantityOf = document.getElementById('quantity').value;
+    //console.log(storeName);
+    displayResponse.innerText = `So what you're saying is, you bought ${quantityOf} ${productName} at ${storeName}?`;
+    
+};

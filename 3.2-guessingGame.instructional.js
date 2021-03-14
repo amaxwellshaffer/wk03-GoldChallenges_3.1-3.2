@@ -19,3 +19,37 @@
 //? not required:  If you liked to style it, feel free to add a stylesheet to your HTML.
 
 //NOTE: Write your code below and push back to your github branch.  SUBMIT YOUR GITHUB URL IN CANVAS
+
+let chosenNumber = Math.floor((Math.random() * 10) +1);
+console.log('the chosen number is ' + chosenNumber);
+
+let attemptNumber = [];
+let guessLog = document.getElementById('guessLog');
+let newLog = document.createElement('p');
+let playAgain = document.getElementById('playAgain');
+
+
+function guessNumber(){
+
+
+    let userGuess = Number(document.getElementById('userGuess').value); 
+    console.log(userGuess);
+
+    if(userGuess == chosenNumber){
+        guessLog.appendChild(newLog);
+        attemptNumber.push(userGuess);
+        newLog.innerText = `${(attemptNumber.length)}) Thats the number! you win!`;
+        playAgain.style = 'display: block'
+    }else if(userGuess < chosenNumber){
+        guessLog.appendChild(newLog);
+        attemptNumber.push(userGuess);
+        newLog.innerText = `${(attemptNumber.length)}) ${userGuess} is too low. Guess higher`;
+    }else if(userGuess > chosenNumber){
+        guessLog.appendChild(newLog);
+        attemptNumber.push(userGuess);
+        newLog.innerText = `${(attemptNumber.length)}) ${userGuess} is too high. Guess lower`;
+    }
+
+    console.log(attemptNumber);
+}
+

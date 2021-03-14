@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing Game</title>
+</head>
+<body>
+
+    <h1>I'm Thinking Of A Number...</h1>
+    <h3>It is between 1 and 10. </h3>
+
+    <form>
+        Your Guess: <input type="text" name="guess" id="userGuess">
+        <button type="button" onclick="guessNumber()">Submit</button>
+    </form>
+
+    <div id='guessLog'>
+
+    </div>
+
+    <div id="playAgain" style="display: none;">
+    <button type="button" onclick="location.reload();">Play Again?</button>
+    </div>
+
+    <script src="3.2-guessingGame.instructional.js"></script>
+</body>
+</html>
