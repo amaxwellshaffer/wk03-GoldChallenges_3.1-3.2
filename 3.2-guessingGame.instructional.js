@@ -23,19 +23,29 @@
 let chosenNumber = Math.floor((Math.random() * 10) +1);
 console.log('the chosen number is ' + chosenNumber);
 
+let maxAttempts = 3;
+let betweenOneAnd = 10;
+
 let attemptNumber = [];
 let guessLog = document.getElementById('guessLog');
 let newLog = document.createElement('p');
 let playAgain = document.getElementById('playAgain');
+let validRange = [];
+    for (i=1; i<= betweenOneAnd; i++){
+        validRange.push(i);
+    }
 
 
 function guessNumber(){
-
-
+        
     let userGuess = Number(document.getElementById('userGuess').value); 
     console.log(userGuess);
 
-    if(userGuess == chosenNumber){
+    if(validRange.includes(userGuess) == false){
+        alert('Clever, but No.\nNumber must be an integer between 1 and 10');
+    }else if(attemptNumber.includes(userGuess)){
+        alert(`You already guessed ${userGuess}.\n(I'll let it slide.)`)
+    } else if(userGuess == chosenNumber){
         guessLog.appendChild(newLog);
         attemptNumber.push(userGuess);
         newLog.innerText = `${(attemptNumber.length)}) Thats the number! you win!`;

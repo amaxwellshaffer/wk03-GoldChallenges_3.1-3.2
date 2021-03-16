@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guessing Game</title>
 </head>
-<body>
+<body style="text-align: center;">
 
     <h1>I'm Thinking Of A Number...</h1>
     <h3>It is between 1 and 10. </h3>
 
-    <form>
-        Your Guess: <input type="text" name="guess" id="userGuess">
-        <button type="button" onclick="guessNumber()">Submit</button>
+    <form onSubmit="return false">
+        Your Guess: <input type="text" name="guess" id="userGuess"  >
+        <button type="button" onclick="guessNumber()">Guess</button>
     </form>
 
     <div id='guessLog'>
